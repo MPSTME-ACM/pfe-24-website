@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 ::-webkit-scrollbar {
   height: 8;
   width: 8px;
@@ -15,4 +16,29 @@
 
 ::-webkit-scrollbar-corner {
   background: #000;
+}
+* {
+  border-color: hsl(240 3.7% 15.9%);
+  color: #fff;
+}
+.blue-border {
+  border-color: hsl(210 3.7% 15.9%);
+}
+
+.glowiee {
+  margin: 0 auto;
+  background: radial-gradient(
+    49.41% 64.58% at 49.4% 0,
+    hsla(0, 0%, 100%, 0.03) 0,
+    hsla(0, 0%, 100%, 0) 100%
+  );
+  border-top: 1px solid;
+  border-image-source: linear-gradient(
+    90deg,
+    transparent 0,
+    hsla(0, 0%, 100%, 0.19) 30%,
+    hsla(0, 0%, 100%, 0.19) 70%,
+    transparent
+  );
+  border-image-slice: 1;
 }

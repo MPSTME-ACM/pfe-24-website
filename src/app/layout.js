@@ -1,5 +1,6 @@
 import { Inter, Be_Vietnam_Pro, Raleway } from "next/font/google";
 import "./globals.css";
+import Navigation from "./components/navigation";
 
 import FlickeringGrid from "./components/flick";
 
@@ -22,20 +23,22 @@ export const metadata = {
   },
   creator: "ACM MPSTME",
   publisher: "ACM MPSTME",
+  metadataBase: new URL("https://mpstmeacm.com"),
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${raleway.className} relative bg-black`}>
+      <body className={`${raleway.className} relative bg-black px-4`}>
+        <Navigation />
         {children}
         <FlickeringGrid
-          className="z-0 absolute inset-0 h-screen w-screen"
+          className="z-0 fixed inset-0 h-screen w-screen"
           squareSize={4}
           gridGap={10}
           color="#6B7280"
           maxOpacity={0.2}
-          flickerChance={0.1}
+          flickerChance={1}
         />
       </body>
     </html>
