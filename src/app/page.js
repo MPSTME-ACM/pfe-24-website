@@ -8,7 +8,10 @@ import { BentoCard, BentoGrid } from "./components/bento";
 function Hero() {
   return (
     //     <div className="min-h-screen w-fit md:w-full max-w-[1204px] mx-auto flex flex-col justify-center items-start  lg:bg-[url('/grainny.png')] bg-no-repeat bg-cover overflow-hidden text-white px-4 md:px-0 pb-10 gap-10">
-    <div className="min-h-screen w-fit lg:w-full max-w-[1204px] mx-auto flex flex-col lg:flex-row justify-center lg:justify-between items-center  lg:bg-[url('/grainny.png')] bg-no-repeat bg-cover overflow-hidden text-white py-10 border-b ">
+    <div
+      className="min-h-screen w-fit lg:w-full max-w-[1204px] mx-auto flex flex-col lg:flex-row justify-center lg:justify-between items-center  lg:bg-[url('/grainny.png')] bg-no-repeat bg-cover overflow-hidden text-white py-10 border-b "
+      id="register"
+    >
       <div className=" w-full max-w-[80ch] space-y-5 mb-8 px-4 md:px-0 ">
         <h1 className="scroll-m-20 text-4xl font-medium tracking-tight lg:text-6xl animate-fade-up animate-duration-700 delay-500 ">
           Programming For{" "}
@@ -21,14 +24,14 @@ function Hero() {
           C++, or Web Development! It would be held this 18 19 and 20 September.
         </p>
         <Link
-          href="/register"
+          href="/#about"
           className=" inline-flex gap-2 items-center justify-center align-bottom font-medium underline underline-offset-4 hover:decoration-pink-700 transition-all duration-300 ease-in-out animate-fade-up animate-delay-[700ms] animate-duration-700"
         >
           Learn More <ChevronDown></ChevronDown>
         </Link>
       </div>
       <div className="w-full animate-fade animate-delay-200 lg:animate-delay-[800ms] animate-duration-700 lg:h-[85vh] lg:overflow-y-scroll px-4 my-auto ">
-        {/* <Form /> */}
+        <Form />
       </div>
     </div>
   );
@@ -172,9 +175,12 @@ function About() {
   ];
 
   return (
-    <div className="min-h-screen w-fit lg:w-full max-w-[1204px] mx-auto flex flex-col justify-center items-start  lg:bg-[url('/grainny.png')] bg-no-repeat bg-cover overflow-hidden text-white px-4 md:px-0 pb-10 gap-10">
+    <div
+      className="min-h-screen w-fit lg:w-full max-w-[1204px] mx-auto flex flex-col justify-center items-start  lg:bg-[url('/grainny.png')] bg-no-repeat bg-cover overflow-hidden text-white px-4 md:px-0 pb-10 gap-10"
+      id="about"
+    >
       <h1 className="scroll-m-20 text-4xl font-medium tracking-tight lg:text-6xl animate-fade-right animate-duration-700 ">
-        What We'll{" "}
+        What We&apos;ll{" "}
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#9046D4] to-[#FFA7FB]">
           Offer
         </span>
