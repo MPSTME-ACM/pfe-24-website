@@ -7,7 +7,6 @@ import { BentoCard, BentoGrid } from "./components/bento";
 
 function Hero() {
   return (
-    //     <div className="min-h-screen w-fit md:w-full max-w-[1204px] mx-auto flex flex-col justify-center items-start  lg:bg-[url('/grainny.png')] bg-no-repeat bg-cover overflow-hidden text-white px-4 md:px-0 pb-10 gap-10">
     <div
       className="min-h-screen w-fit lg:w-full max-w-[1204px] mx-auto flex flex-col lg:flex-row justify-center lg:justify-between items-center  lg:bg-[url('/grainny.png')] bg-no-repeat bg-cover overflow-hidden text-white py-10 border-b "
       id="register"
@@ -21,7 +20,7 @@ function Hero() {
         </h1>
         <p className="font-medium text-white/75 tracking-tight lg:text-2xl animate-fade-up animate-delay-[600ms] animate-duration-700">
           A 3-day workshop where you can choose to learn the basics of Python,
-          C++, or Web Development! It would be held this 18 19 and 20 September.
+          C++, or Web Development! It will be held on 18 19 and 20 September.
         </p>
         <Link
           href="/#about"
