@@ -10,7 +10,7 @@ export default function Notes() {
       <a href="/notes/cpp" className="underline underline-offset-4 hover:decoration-pink-700 transition-all duration-300 ease-in-out inline-flex gap-2 items-center">
         C++ Notes
       </a>
-      <a href="/notes/python" className="underline underline-offset-4 hover:decoration-pink-700 transition-all duration-300 ease-in-out inline-flex gap-2 items-center">
+      <a href="/notes/py" className="underline underline-offset-4 hover:decoration-pink-700 transition-all duration-300 ease-in-out inline-flex gap-2 items-center">
         Python Notes
       </a>
       <a href="/notes/web" className="underline underline-offset-4 hover:decoration-pink-700 transition-all duration-300 ease-in-out inline-flex gap-2 items-center">
