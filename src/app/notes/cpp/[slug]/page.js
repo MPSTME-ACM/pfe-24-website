@@ -35,7 +35,7 @@ export default async function CppNotes({ params }) {
   return (
     <div className="max-w-[1204px] mx-auto px-4 md:px-0 py-10">
       <h1 className="scroll-m-20 text-4xl font-medium tracking-tight lg:text-6xl animate-fade-up animate-duration-700 delay-700">{doc.title}</h1>
-      <p className="mb-8 text-lg text-gray-200">{doc.description}</p>
+      <p className="mb-8 text-lg text-gray-200 scroll-m-20 text-4xl font-medium tracking-tight lg:text-6xl animate-fade-right animate-duration-700">{doc.description}</p>
       <br></br>
       <PortableText value={doc.body} components={{
         types: {
