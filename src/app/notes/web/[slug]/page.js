@@ -34,8 +34,7 @@ export default async function WebNotes({ params }) {
   return (
     <div className="max-w-[1204px] mx-auto px-4 md:px-0 py-10">
       <h1 className="scroll-m-20 text-4xl font-medium tracking-tight lg:text-6xl animate-fade-up animate-duration-700 delay-700">{doc.title}</h1>
-      <p className="mb-8 text-lg text-gray-200 scroll-m-20 text-4xl font-medium tracking-tight animate-fade-right animate-duration-700">{doc.description}</p>
-      <br></br>
+      <p className="mb-8 text-lg text-gray-200 scroll-m-20 text-4xl tracking-tight animate-fade-right animate-duration-700">{doc.description}</p>
       <PortableText value={doc.body} components={{
         types: {
           code: ({ value }) => (
@@ -54,6 +53,20 @@ export default async function WebNotes({ params }) {
               {value.caption && <figcaption className="text-center text-sm text-gray-400 mt-2">Diag: {value.caption}</figcaption>}
             </figure>
           )
+        },
+        block: {
+          h2: ({ children }) => (
+            <h2 className="text-3xl font-semibold mt-10 mb-6">{children}</h2>
+          ),
+          h3: ({ children }) => (
+            <h3 className="text-2xl font-medium mt-8 mb-4">{children}</h3>
+          ),
+          normal: ({ children }) => (
+            <p className="text-lg leading-relaxed mb-6">{children}</p>
+          )
+        },
+        marks: {
+          strong: ({ children }) => <strong className="font-bold">{children}</strong>
         }
       }} />
     </div>
