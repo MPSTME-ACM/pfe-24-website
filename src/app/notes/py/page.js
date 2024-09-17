@@ -17,7 +17,7 @@ export default async function PyNotes() {
   }
 
   return (
-    <div classname="prose lg:prose-xl">
+    <div className="prose lg:prose-xl">
       <h1>Document List</h1>
       <ul>
         {docs.map((doc) => (

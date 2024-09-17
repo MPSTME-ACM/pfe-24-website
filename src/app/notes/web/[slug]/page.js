@@ -37,6 +37,11 @@ export default async function WebNotes({ params }) {
       <p>{doc.description}</p>
       <PortableText value={doc.body} components={{
         types: {
+          code: ({ value }) => (
+            <pre>
+              <code>{value.code}</code>
+            </pre>
+          ),
           image: ({ value }) => (
             <figure>
               <img
