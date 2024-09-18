@@ -31,6 +31,16 @@ export default async function CppNotes() {
   //     </ul>
   //   </div>
   // );
+
+  // Function to extract chapter number for sorting
+  const getChapterNumber = (title) => {
+    const match = title.match(/CH\s-\s(\d+)/);
+    return match ? parseInt(match[1], 10) : Infinity; // Assign Infinity to non-matching titles
+  };
+
+  // Sort documents by chapter number
+  docs.sort((a, b) => getChapterNumber(a.title) - getChapterNumber(b.title));
+
   return (
     // <div className="prose lg:prose-xl">
     <div className="prose-xl w-full max-w-[1204px] mx-auto flex flex-col justify-center md:justify-start items-start  lg:bg-[url('/grainny.png')] bg-no-repeat bg-cover overflow-hidden text-white px-4 md:px-0 pb-10 gap-10">
