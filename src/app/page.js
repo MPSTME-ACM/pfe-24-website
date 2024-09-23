@@ -30,7 +30,6 @@ function Hero() {
         </Link>
       </div>
       <div className="w-full animate-fade animate-delay-200 lg:animate-delay-[800ms] animate-duration-700 lg:h-[85vh] lg:overflow-y-scroll px-4 my-auto ">
-        <Form />
       </div>
     </div>
   );
@@ -39,7 +38,7 @@ function Hero() {
 function About() {
   const features = [
     {
-      name: "Notes and Reffrence Code",
+      name: "Notes and Reference Code",
       description:
         "We will provide all the notes you need, open for all along with code you can refer to while attending our workshop.",
       href: "/notes",

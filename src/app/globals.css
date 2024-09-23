@@ -42,3 +42,21 @@
   );
   border-image-slice: 1;
 }
+
+.art {
+  @apply flex flex-col w-full max-w-3xl mx-auto;
+}
+
+.art h1 {
+  @apply scroll-m-20 text-xl font-semibold tracking-tight py-4 pb-2;
+}
+.art p {
+  @apply text-base text-neutral-400 py-1;
+}
+
+.art a {
+  @apply text-base font-medium text-neutral-300 underline underline-offset-4 hover:text-pink-500 transition-all duration-300 ease-in-out py-5;
+}
+.art iframe {
+  @apply w-full aspect-video my-4;
+}
