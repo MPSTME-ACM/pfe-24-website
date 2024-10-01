@@ -3,6 +3,8 @@ import { groq } from "next-sanity";
 import { PortableText } from "@portabletext/react";
 import { urlFor } from "@/lib/imageUrl"; // Import the urlFor helper function
 import CodeBlock from "@/app/components/codeHig";
+import ClientOnlyComponent from "@/app/components/ClientOnlyComponent";
+
 
 export async function generateStaticParams() {
   // Fetch all slugs for the pages
@@ -49,7 +51,8 @@ export default async function PyNotes({ params }) {
                   src={urlFor(value.asset).width(800).url()}
                   alt={value.caption || "Image"}
                   style={{ maxWidth: "100%", height: "auto" }}
-                  className="mx-auto rounded-lg"
+                  className="mx-auto rounded-lg select-none" 
+                  draggable="false"
                 />
                 {value.caption && (
                   <figcaption className="text-center text-sm text-gray-400 mt-2">
@@ -61,6 +64,8 @@ export default async function PyNotes({ params }) {
           },
         }}
       />
+      {/* Render the ClientOnlyComponent */}
+      <ClientOnlyComponent />
     </div>
   );
 }
