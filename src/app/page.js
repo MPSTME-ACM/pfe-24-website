@@ -23,10 +23,10 @@ function Hero() {
           C++, or Web Development! It will be held on 18 19 and 20 September.
         </p>
         <Link
-          href="/#about"
+          href="/notes"
           className=" inline-flex gap-2 items-center justify-center align-bottom font-medium underline underline-offset-4 hover:decoration-pink-700 transition-all duration-300 ease-in-out animate-fade-up animate-delay-[700ms] animate-duration-700"
         >
-          Learn More <ChevronDown></ChevronDown>
+          Notes <ChevronDown></ChevronDown>
         </Link>
       </div>
       <div className="w-full animate-fade animate-delay-200 lg:animate-delay-[800ms] animate-duration-700 lg:h-[85vh] lg:overflow-y-scroll px-4 my-auto ">
@@ -49,7 +49,7 @@ function About() {
       description:
         "Yes, you heard it right! This is a free workshop, where senior student mentors will be your instructors, addressing all your doubts with personalized attention! ",
       href: "/",
-      cta: "Learn more",
+      cta: "notes",
       className: "lg:col-start-1 lg:col-end-3 lg:row-start-1 lg:row-end-3",
     },
     {
@@ -178,9 +178,9 @@ function About() {
       id="about"
     >
       <h1 className="scroll-m-20 text-4xl font-medium tracking-tight lg:text-6xl animate-fade-right animate-duration-700 ">
-        What We&apos;ll{" "}
+        What we{" "}
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#9046D4] to-[#FFA7FB]">
-          Offer
+          Offered
         </span>
       </h1>
       <BentoGrid className="lg:grid-rows-3">

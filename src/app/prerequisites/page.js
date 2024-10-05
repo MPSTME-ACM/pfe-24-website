@@ -15,11 +15,10 @@ function Web({ os }) {
   return (
     <div className="art">
       <h1>
-        Hello There! Here are a few prerequisites for the Web Development
-        Workshop
+        Hello There! Here are a few prerequisites that were required for the Workshop
       </h1>
       <p>
-        We will be needing VScode for editing our code, Git for version control
+        We used VScode for editing our code, Git for version control
         and Github for hosting our code.Lets go step by step installing them.
       </p>
       <h1>First we need to install VScode</h1>
@@ -67,7 +66,7 @@ function Web({ os }) {
       </a>
       <h1>Finally, a few extensions for VScode</h1>
       <p>
-        We&apos;ll be using Tailwindcss for styling our website, so lets install{" "}
+        We used Tailwindcss for styling our website, so lets install{" "}
         <a
           href="https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss"
           target="_blank"
@@ -77,7 +76,7 @@ function Web({ os }) {
         </a>
       </p>
       <p>
-        For formatting our code, we&apos;ll be using{" "}
+        For formatting our code, we used{" "}
         <a
           href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode"
           target="_blank"
@@ -94,11 +93,11 @@ function Python({ os }) {
   return (
     <div className="art">
       <h1>
-        Setting up Python Development Environment on{" "}
+        Set up Python Development Environment on{" "}
         {os.charAt(0).toUpperCase() + os.slice(1)}
       </h1>
       <p>
-        We will be using Pycharm IDE for our Workshop, so lets install it.
+        We used Pycharm IDE for our Workshop, so lets install it.
         <a
           href="https://www.jetbrains.com/pycharm/download"
           target="_blank"
@@ -129,12 +128,12 @@ function CPP({ os }) {
     <div className="art">
       <h1>Setting up C++ Development Environment on {os}</h1>
       <p>
-        Lets get started with C++ programming by setting up your development
+        We got started with C++ programming by setting up your development
         environment on {os}.
       </p>
       {os == "Windows" ? (
         <p>
-          We&apos;ll be using Msys2 for C++ development, so lets install it.
+          We used Msys2 for C++ development, so lets install it.
           <a
             href="https://code.visualstudio.com/docs/cpp/config-mingw"
             target="_blank"
@@ -145,7 +144,7 @@ function CPP({ os }) {
         </p>
       ) : (
         <p>
-          We&apos;ll be using Clang for C++ development, so lets install it.
+          We used Clang for C++ development, below is the installation link.
           <a
             href="https://code.visualstudio.com/docs/cpp/config-clang-mac"
             target="_blank"

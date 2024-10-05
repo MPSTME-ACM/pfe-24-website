@@ -34,10 +34,10 @@ export default function Navigation() {
           About Us
         </Link>
         <Link
-          href="/#register"
+          href="/notes"
           className="underline underline-offset-4 hover:decoration-pink-700 transition-all duration-300 ease-in-out inline-flex gap-2 items-center"
         >
-          Register Now!
+          Notes
         </Link>
         <Link
           href="/syllabus"
@@ -81,10 +81,10 @@ export default function Navigation() {
               About
             </Link>
             <Link
-              href="/#register"
+              href="/notes"
               className="flex items-center gap-2 text-lg font-semibold underline underline-offset-4 hover:decoration-pink-700 transition-all duration-300 ease-in-out"
             >
-              Register Now!
+              Notes
             </Link>
             <Link
               href="/syllabus"
