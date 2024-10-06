@@ -19,8 +19,8 @@ function Hero() {
           </span>
         </h1>
         <p className="font-medium text-white/75 tracking-tight lg:text-2xl animate-fade-up animate-delay-[600ms] animate-duration-700">
-          A 3-day workshop where you can choose to learn the basics of Python,
-          C++, or Web Development! It will be held on 18 19 and 20 September.
+          A 3-day workshop where you choose to learn the basics of Python,
+          C++, or Web Development! It was held on the dates 18 19 and 20 September.
         </p>
         <Link
           href="/notes"
@@ -40,14 +40,14 @@ function About() {
     {
       name: "Notes and Reference Code",
       description:
-        "We will provide all the notes you need, open for all along with code you can refer to while attending our workshop.",
+        "We have provide all the notes you need, open for all along with code you can refer to while attending our workshop.",
       href: "/notes",
       className: "lg:col-start-1 lg:col-end-3 lg:row-start-3 lg:row-end-4",
     },
     {
       name: "Taught For Free By Students",
       description:
-        "Yes, you heard it right! This is a free workshop, where senior student mentors will be your instructors, addressing all your doubts with personalized attention! ",
+        "Yes, you heard it right! This was a free workshop, where senior student mentors were your instructors, addressing all your doubts with personalized attention! ",
       href: "/",
       cta: "notes",
       className: "lg:col-start-1 lg:col-end-3 lg:row-start-1 lg:row-end-3",
