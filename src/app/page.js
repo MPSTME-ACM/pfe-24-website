@@ -195,12 +195,12 @@ function About() {
 function Contact() {
   return (
     <div className="w-full max-w-[1204px] mx-auto flex flex-col justify-center md:justify-start items-start  lg:bg-[url('/grainny.png')] bg-no-repeat bg-cover overflow-hidden text-white px-4 md:px-0 pb-10 gap-10">
-      <h1 className="scroll-m-20 text-4xl font-medium tracking-tight lg:text-6xl animate-fade-right animate-duration-700 ">
+      {/* <h1 className="scroll-m-20 text-4xl font-medium tracking-tight lg:text-6xl animate-fade-right animate-duration-700 ">
         Any Doubts? <br className="md:hidden"></br>
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#9046D4] to-[#FFA7FB]">
           Contact Us !
         </span>
-      </h1>
+      </h1> */}
       <div className="flex flex-col gap-8 w-full text-lg md:text-2xl">
         <a
           href="https://wa.me/919326979089"
