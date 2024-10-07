@@ -249,8 +249,6 @@ export default function Home() {
       <div className="w-full max-w-[1204px] glowiee h-16"></div>
       <About />
       <div className=" w-full max-w-[1204px] glowiee h-16"></div>
-      <Contact />
-      <div className="w-full max-w-[1204px] glowiee h-16"></div>
     </>
   );
 }
