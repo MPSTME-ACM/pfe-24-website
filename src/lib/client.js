@@ -6,8 +6,6 @@ const config = {
   dataset: "production",
   apiVersion: "2023-07-21",
   useCdn: false,
-  ignoreBrowserTokenWarning: true,
-  perspective: "published",
 };
 const client = createClient(config);
 export default client;

@@ -29,7 +29,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${raleway.className} relative bg-black px-4`}>
+      <body
+        className={`${raleway.className} relative bg-black px-4`}
+      >
         <Navigation />
         {children}
         <FlickeringGrid

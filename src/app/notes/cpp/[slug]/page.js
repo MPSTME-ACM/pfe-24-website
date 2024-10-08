@@ -88,7 +88,7 @@ export default async function CppNotes({ params }) {
       description,
       body
     }`,
-    { slug }
+    { slug },
   );
 
   if (!doc) {

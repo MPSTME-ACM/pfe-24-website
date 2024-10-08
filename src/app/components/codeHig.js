@@ -11,6 +11,7 @@ async function highlight(code, lang) {
 }
 
 export default async function CodeBlock({ code, language }) {
+  console.log(language);
   const highlightedCode = await highlight(code, language || "text");
   return <div dangerouslySetInnerHTML={{ __html: highlightedCode }} />;
 }
