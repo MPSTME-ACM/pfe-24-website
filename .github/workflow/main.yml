@@ -1,0 +1,60 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  build-and-push:
+    runs-on: self-hosted
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Testing If Build Is Successful
+      - run: npm ci
+
+      - name: Set up build environment
+      - run: |
+          # Variables
+          IMAGE_NAME="mpstme-acm/pfe-24"
+          DATE_TAG=$(date +%Y-%m-%d-%H-%M-%S)
+          DOCKERFILE="Dockerfile"
+          ENVIRONMENT="production"
+          DESCRIPTION="PFE 24' Website"
+
+          # Docker Build Script
+          docker build "$BUILD_CONTEXT" \
+            --file "$DOCKERFILE" \
+            --tag "$IMAGE_NAME:$DATE_TAG" \
+            --tag "$IMAGE_NAME:latest" \
+            --build-arg ENVIRONMENT="$ENVIRONMENT" \
+            --label "maintainer=mpstme-acm" \
+            --label "version=$DATE_TAG" \
+            --label "description=ACM PFE24' Website" \
+            --pull \
+            --no-cache
+
+          echo "Docker image built and tagged as $IMAGE_NAME:$DATE_TAG and $IMAGE_NAME:latest"
+
+      - name: Run the Docker container
+      - run: |
+          # Variables
+          IMAGE_NAME="mpstme-acm/pfe-24"
+          TAG="latest"  # Modify this if you want to run with specific tags
+          CONTAINER_NAME="acm-chronicles-container"
+
+          # Stop and remove any existing container with the same name
+          if [ "$(docker ps -a | grep $CONTAINER_NAME)" ]; then
+            echo "Container with the name '$CONTAINER_NAME' already exists. Stopping and removing it."
+            docker stop "$CONTAINER_NAME"
+            docker rm "$CONTAINER_NAME"
+          fi
+
+          # Run the Docker container
+          docker run -d \
+            --name "$CONTAINER_NAME" \
+            -p 3004:3000 \  # Map port 3004 on localhost to 3000 in the container
+            "$IMAGE_NAME:$TAG"
+
+          echo "Docker container '$CONTAINER_NAME' is running from image '$IMAGE_NAME:$TAG'"

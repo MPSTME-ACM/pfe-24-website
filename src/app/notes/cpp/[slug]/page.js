@@ -89,6 +89,9 @@ export default async function CppNotes({ params }) {
       body
     }`,
     { slug },
+    {
+      cache: "force-cache",
+    }
   );
 
   if (!doc) {

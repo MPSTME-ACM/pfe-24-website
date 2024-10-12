@@ -1,6 +1,6 @@
 import client from "@/lib/client";
 import { groq } from "next-sanity";
-import Link from 'next/link';
+import Link from "next/link";
 
 export default async function PyNotes() {
   // Fetch all documents with title and slug
@@ -8,7 +8,10 @@ export default async function PyNotes() {
     groq`*[_type == "py"]{
       title,
       slug
-    }`
+    }`,
+    {
+      cache: "force-cache",
+    }
   );
 
   // Handle case where no documents are found
@@ -35,7 +38,7 @@ export default async function PyNotes() {
           List !
         </span>
       </h1>
-      <ul>
+      <ul className="animate-fade-right animate-duration-700 delay-150">
         {docs.map((doc) => (
           <li
             key={doc.slug.current}

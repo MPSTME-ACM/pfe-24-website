@@ -29,9 +29,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${raleway.className} relative bg-black px-4`}
-      >
+      <head>
+        <script
+          defer
+          src="https://analytics.nmims.tech/script.js"
+          data-website-id="540d5b66-23ef-4e54-8a60-ae37f5c9665b"
+        ></script>
+      </head>
+      <body className={`${raleway.className} relative bg-black px-4`}>
         <Navigation />
         {children}
         <FlickeringGrid

@@ -5,10 +5,11 @@ import { urlFor } from "@/lib/imageUrl"; // Import the urlFor helper function
 import CodeBlock from "@/app/components/codeHig";
 import ClientOnlyComponent from "@/app/components/ClientOnlyComponent";
 
-
 export async function generateStaticParams() {
   // Fetch all slugs for the pages
-  const docs = await client.fetch(groq`*[_type == "py"]{ slug }`);
+  const docs = await client.fetch(groq`*[_type == "py"]{ slug }`, {
+    cache: "force-cache",
+  });
 
   // Return the slugs as params
   return docs.map((doc) => ({ slug: doc.slug.current }));
@@ -51,7 +52,7 @@ export default async function PyNotes({ params }) {
                   src={urlFor(value.asset).width(800).url()}
                   alt={value.caption || "Image"}
                   style={{ maxWidth: "100%", height: "auto" }}
-                  className="mx-auto rounded-lg select-none" 
+                  className="mx-auto rounded-lg select-none"
                   draggable="false"
                 />
                 {value.caption && (

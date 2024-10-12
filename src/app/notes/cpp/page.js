@@ -1,6 +1,6 @@
 import client from "@/lib/client";
 import { groq } from "next-sanity";
-import Link from 'next/link';
+import Link from "next/link";
 
 export default async function CppNotes() {
   // Fetch all documents with title and slug
@@ -8,7 +8,10 @@ export default async function CppNotes() {
     groq`*[_type == "cpp"]{
       title,
       slug
-    }`
+    }`,
+    {
+      cache: "force-cache",
+    }
   );
 
   // Handle case where no documents are found
@@ -46,20 +49,19 @@ export default async function CppNotes() {
     <div className="prose-lg w-full max-w-lg mx-auto flex flex-col justify-center md:justify-start items-start  lg:bg-[url('/grainny.png')] bg-no-repeat bg-cover overflow-hidden text-white px-4 md:px-0 pb-10 gap-10">
       <br></br>
       <h1 className="scroll-m-20 text-4xl font-medium tracking-tight lg:text-6xl animate-fade-right animate-duration-700">
-        Chapter <br className="md:hidden">
-        </br>
+        Chapter <br className="md:hidden"></br>
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#9046D4] to-[#FFA7FB]">
           List !
         </span>
       </h1>
-      <ul className="">
+      <ul className="animate-fade-right animate-duration-700 delay-150">
         {docs.map((doc) => (
-          <li key={doc.slug.current} 
-          className="block underline underline-offset-4 hover:decoration-pink-700 transition-all duration-300 ease-in-out">
+          <li
+            key={doc.slug.current}
+            className="block underline underline-offset-4 hover:decoration-pink-700 transition-all duration-300 ease-in-out"
+          >
             {/* Link to the dynamic route with the slug */}
-            <Link href={`/notes/cpp/${doc.slug.current}`}>
-              {doc.title}
-            </Link>
+            <Link href={`/notes/cpp/${doc.slug.current}`}>{doc.title}</Link>
           </li>
         ))}
       </ul>
