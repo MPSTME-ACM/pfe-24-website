@@ -248,7 +248,6 @@ export default function Home() {
       <Hero />
       <div className="w-full max-w-[1204px] glowiee h-16"></div>
       <About />
-      <div className=" w-full max-w-[1204px] glowiee h-16"></div>
     </>
   );
 }
