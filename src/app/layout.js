@@ -1,6 +1,7 @@
-import { Inter, Be_Vietnam_Pro, Raleway } from "next/font/google";
+import { Be_Vietnam_Pro, Raleway } from "next/font/google";
 import "./globals.css";
 import Navigation from "./components/navigation";
+import Script from "next/script";
 
 import FlickeringGrid from "./components/flick";
 
@@ -29,13 +30,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        <script
-          defer
-          src="https://analytics.nmims.tech/script.js"
-          data-website-id="540d5b66-23ef-4e54-8a60-ae37f5c9665b"
-        ></script>
-      </head>
+      <Script
+        defer
+        src="https://analytics.nmims.tech/script.js"
+        data-website-id="540d5b66-23ef-4e54-8a60-ae37f5c9665b"
+      ></Script>
+
       <body className={`${raleway.className} relative bg-black px-4`}>
         <Navigation />
         {children}

@@ -19,14 +19,12 @@ jobs:
 
       - name: Set up build environment
         run: |
-          # Variables
           IMAGE_NAME="mpstme-acm/pfe-24"
           DATE_TAG=$(date +%Y-%m-%d-%H-%M-%S)
           DOCKERFILE="Dockerfile"
           ENVIRONMENT="production"
           DESCRIPTION="PFE 24' Website"
 
-          # Docker Build Script
           docker build . \
             --file "$DOCKERFILE" \
             --tag "$IMAGE_NAME:$DATE_TAG" \
@@ -44,8 +42,8 @@ jobs:
         run: |
           # Variables
           IMAGE_NAME="mpstme-acm/pfe-24"
-          TAG="latest"  # Modify this if you want to run with specific tags
-          CONTAINER_NAME="acm-chronicles-container"
+          TAG="latest"
+          CONTAINER_NAME="acm-pfe-container"
 
           # Stop and remove any existing container with the same name
           if [ "$(docker ps -a | grep $CONTAINER_NAME)" ]; then
@@ -57,7 +55,7 @@ jobs:
           # Run the Docker container
           docker run -d \
             --name "$CONTAINER_NAME" \
-            -p 3004:3000 \  # Map port 3004 on localhost to 3000 in the container
+            -p 3004:3000 \
             "$IMAGE_NAME:$TAG"
 
           echo "Docker container '$CONTAINER_NAME' is running from image '$IMAGE_NAME:$TAG'"
