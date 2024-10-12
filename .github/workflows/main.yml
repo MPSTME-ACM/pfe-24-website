@@ -12,7 +12,10 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Testing If Build Is Successful
-      - run: npm ci
+        run: |
+          # Install dependencies and build the project
+          npm ci
+          npm run build
 
       - name: Set up build environment
       - run: |
