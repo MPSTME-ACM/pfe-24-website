@@ -18,7 +18,7 @@ jobs:
           npm run build
 
       - name: Set up build environment
-      - run: |
+        run: |
           # Variables
           IMAGE_NAME="mpstme-acm/pfe-24"
           DATE_TAG=$(date +%Y-%m-%d-%H-%M-%S)
@@ -27,21 +27,21 @@ jobs:
           DESCRIPTION="PFE 24' Website"
 
           # Docker Build Script
-          docker build "$BUILD_CONTEXT" \
+          docker build . \
             --file "$DOCKERFILE" \
             --tag "$IMAGE_NAME:$DATE_TAG" \
             --tag "$IMAGE_NAME:latest" \
             --build-arg ENVIRONMENT="$ENVIRONMENT" \
             --label "maintainer=mpstme-acm" \
             --label "version=$DATE_TAG" \
-            --label "description=ACM PFE24' Website" \
+            --label "description=$DESCRIPTION" \
             --pull \
             --no-cache
 
           echo "Docker image built and tagged as $IMAGE_NAME:$DATE_TAG and $IMAGE_NAME:latest"
 
       - name: Run the Docker container
-      - run: |
+        run: |
           # Variables
           IMAGE_NAME="mpstme-acm/pfe-24"
           TAG="latest"  # Modify this if you want to run with specific tags
