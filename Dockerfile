@@ -1,37 +1,24 @@
 # Use Node.js 18 Alpine as the base image
-FROM node:18-alpine AS base
+FROM node:18-alpine
 
-# Install dependencies only when needed
-FROM base AS deps
-# Add libc6-compat for Alpine compatibility
-RUN apk add --no-cache libc6-compat
+# Set working directory
 WORKDIR /app
 
-# Copy package files to set up dependencies
-COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
-RUN \
-  if [ -f yarn.lock ]; then yarn --frozen-lockfile; \
-  elif [ -f package-lock.json ]; then npm ci; \
-  elif [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm i --frozen-lockfile; \
-  else echo "Lockfile not found." && exit 1; \
-  fi
+# Copy all files to the working directory
+COPY . .
+
+# Install dependencies
+RUN npm ci
 
 # Build the application
-FROM base AS builder
-WORKDIR /app
-COPY --from=deps /app/node_modules ./node_modules
-COPY . .
 RUN npm run build
 
-ENV NODE_ENV production
+# Expose the port the app runs on
+EXPOSE 3000
 
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nextjs
-USER nextjs
-
-EXPOSE 3004
-
+# Set environment variables
 ENV PORT 3000
 ENV HOSTNAME "0.0.0.0"
-# Start the Next.js application
-CMD ["npm", "run", "start"]
+
+# Start the application
+CMD ["npm", "start"]
